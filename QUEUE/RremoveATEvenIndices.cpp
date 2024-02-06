@@ -1,17 +1,19 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 using namespace std;
-void removeAtEven(queue<int>&q)
+void removeAtEven(queue<int> &q)
 {
-    int n=q.size();
-    for(int i=0;i<n;i++)
+    int n = q.size();
+    for (int i = 0; i < n; i++)
     {
-        if(i%2==0)q.pop();
-        else{
-            int x=q.front();
+        if (i % 2 == 0)
+            q.pop();
+        else
+        {
+            int x = q.front();
             q.pop();
             q.push(x);
-            }
+        }
     }
 }
 void display(queue<int> &q)
@@ -27,7 +29,7 @@ void display(queue<int> &q)
 }
 int main()
 {
-    queue<int>q;
+    queue<int> q;
     q.push(10);
     q.push(20);
     q.push(30);
@@ -35,7 +37,7 @@ int main()
     q.push(50);
     q.push(60);
     display(q);
-    cout<<endl;
+    cout << endl;
     removeAtEven(q);
     display(q);
 }
