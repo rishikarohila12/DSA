@@ -12,12 +12,12 @@ class Node{
         this->right=NULL;
     }
 };
-void preorder(Node*root)
+void postorder(Node*root)
     {
         if(root==NULL)return;
+        postorder(root->left);
+        postorder(root->right);
         cout<<root->val<<" ";
-        preorder(root->left);
-        preorder(root->right);
     }
     int main(){
 
@@ -30,4 +30,4 @@ void preorder(Node*root)
     a->right=c;
     b->left=d;
     b->right=e;
-   preorder(a);cout<<endl;}
+    postorder(a);cout<<endl;}
