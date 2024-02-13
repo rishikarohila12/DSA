@@ -19,8 +19,18 @@ class Maxheap{
     void downheapify(int idx){
         int lc=2*idx+1;
         int rc=2*idx+2;
-        if(lc)
-    }
+        while(lc>=hp.size()) break;
+        int maxEl=idx;
+        if(hp[lc]>hp[maxEl])
+        maxEl=lc;
+        if(hp[rc]>hp[maxEl])
+        maxEl=rc;
+        if(maxEl!=idx){
+            swap(hp[idx],hp[maxEl]);
+            idx=maxEl;
+        }
+}
+    
     public:
     void push(int element){
         hp.push_back(element);
@@ -30,6 +40,14 @@ class Maxheap{
         if(empty())return INT_MIN;
         return hp[0];
     }
+    void pop(){
+    if(empty())return;
+swap(hp[0],hp[hp.size()-1]);
+hp.pop_back();
+if(!empty()){
+    downheapify(0);
+}
+}
     int empty(){
         return hp.size()==0;
     }
@@ -38,9 +56,6 @@ class Maxheap{
             cout<<hp[i]<<" ";
         }
     }
-
-
-
 };
 int main(){
     Maxheap hp;
@@ -50,5 +65,10 @@ int main(){
     hp.push(40);
     hp.push(50);
     hp.push(60);
+    cout<<"Priority Queue: ";
+    hp.display();
+    cout<<endl;
+    cout<<"After deleting Node with highest priority:";
+    hp.pop();
     hp.display();
 }
