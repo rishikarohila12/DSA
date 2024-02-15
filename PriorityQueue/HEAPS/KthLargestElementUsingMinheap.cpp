@@ -2,15 +2,15 @@
 #include<queue>
 using namespace std;
 int main()
-{int arr[]={10,20,-4,5,18,24,1,-7,56};
-int k=2;
-int n=sizeof(arr)/sizeof(arr[0]);
-    priority_queue<int>pq;
+{
+    priority_queue<int,vector<int>,greater<int>>pq;
+    int arr[]={10,200,-4,6,18,2,105,118};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int k=3;
     for(int i=0;i<n;i++)
     {
         pq.push(arr[i]);
         if(pq.size()>k) pq.pop();
     }
     cout<<pq.top();
-
 }

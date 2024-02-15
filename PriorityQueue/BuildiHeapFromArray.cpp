@@ -23,6 +23,7 @@ void buildHeap(int arr[],int n){
     }
 }
 void printHeap(int arr[],int n){
+    cout<<"Array Implementation Of Heap is : ";
     for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
