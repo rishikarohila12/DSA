@@ -1,5 +1,3 @@
-// Adjascency List representation in C++
-
 #include <iostream>
 #include <vector>
 using namespace std;
